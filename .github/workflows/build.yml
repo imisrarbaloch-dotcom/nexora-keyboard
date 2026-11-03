@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Decode font
+        run: base64 -d app/src/main/assets/fonts/nexora-b64.txt > app/src/main/assets/fonts/nexora.ttf
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
